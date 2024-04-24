@@ -1,0 +1,18 @@
+//@version=5
+indicator(title="Modified Donchian Channel", shorttitle="NTDC", overlay=true, timeframe="", timeframe_gaps=true)
+length = input.int(72, minval=4)
+lower = ta.lowest(close[1], length - 1)
+upper = ta.highest(close[1], length - 1)
+var sig = 0
+buy = ta.crossover(close, upper) and sig != 1
+sell = ta.crossunder(close, lower) and sig != -1
+if buy
+    sig := 1
+if sell
+    sig := -1
+    
+u = plot(upper, "Upper", color=#2962FF)
+l = plot(lower, "Lower", color=#2962FF)
+//plot(sig)
+plotshape(buy, style=shape.labelup, location=location.belowbar, color=#00FF00, size=size.tiny, title="Buy Signal", text="Long", textcolor=color.black)
+plotshape(sell, style=shape.labeldown, location=location.abovebar, color=#FF0000, size=size.tiny, title="Sell Signal", text="Short", textcolor

@@ -1,0 +1,7 @@
+*.csv
+*.pyc
+*.webm
+*.mkv
+*.feather
+bfg-1.14.0.jar
+.ipynb_checkpoints/*
