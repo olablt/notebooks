@@ -5,3 +5,8 @@
 *.feather
 bfg-1.14.0.jar
 .ipynb_checkpoints/*
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
